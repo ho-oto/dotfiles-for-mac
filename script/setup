@@ -15,9 +15,9 @@ cd "$DOTFILES_ROOT/script"
 
 installer/cargo
 installer/brew
-installer/pyenv
 installer/fisher
 installer/tmux
+installer/pyenv
 installer/misc
 
 cat <<EOF
