@@ -14,3 +14,5 @@ repos=(
 for REPO in "${repos[@]}"; do
     "$HOME/.cargo/bin"/cargo install "$REPO"
 done
+
+"$HOME/.cargo/bin"/evcxr_jupyter --install

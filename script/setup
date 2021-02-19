@@ -13,12 +13,11 @@ cd "$DOTFILES_ROOT/script"
 
 ./dot
 
-installer/cargo
 installer/brew
 installer/fisher
 installer/tmux
 installer/pyenv
-installer/misc
+installer/cargo
 
 cat <<EOF
 You have to do the following:

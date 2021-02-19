@@ -1,4 +1,0 @@
-#!/bin/bash
-set -euxo pipefail
-
-"$HOME/.cargo/bin"/evcxr_jupyter --install
