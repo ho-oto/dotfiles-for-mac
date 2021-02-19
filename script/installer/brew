@@ -27,8 +27,8 @@ formulas=(
     poppler
     procs # will be builded by cargo
     ripgrep # will be builded by cargo
-    ripgrep-all # will be builded by cargo
-    shellcheck
+#    ripgrep-all # will be builded by cargo
+#    shellcheck
     starship # will be builded by cargo
     tealdeer
     tmux
