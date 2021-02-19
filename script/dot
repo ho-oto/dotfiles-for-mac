@@ -9,30 +9,26 @@ DOTFILES_CONFIG="$DOTFILES_ROOT/.config"
 
 dirshome=(
     .julia/config
-    .jupyter
     .config
 )
 fileshome=(
     .bashrc
+    .bash_profile
     .emacs.el
-    .profile
     .tmux.conf
     .julia/config/startup.jl
-    .jupyter/jupyter_notebook_config.py
     .config/starship.toml # location of starship.toml is hard-coded as $HOME/.config, not $XDG_CONFIG_HOME
 )
 
 dirsxdgc=(
     fish
     git
-    nano
 )
 filesxdgc=(
     fish/config.fish
     # fish/fish_plugins
     git/config
     git/ignore
-    nano/nanorc
 )
 
 mkdir -p "$XDG_CONFIG_HOME"
