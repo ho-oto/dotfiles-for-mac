@@ -56,6 +56,7 @@ formulascask=(
 )
 
 brew update
+brew tap homebrew/cask-fonts
 
 for formula in "${formulas[@]}"; do
     if ! brew list --versions "$formula"; then
