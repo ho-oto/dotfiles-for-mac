@@ -1,0 +1,18 @@
+[user]
+    name = Hayate Nakano
+    email = nakanodesu@gmail.com
+
+[github]
+    user = ho-oto
+
+[core]
+    editor = nano
+    pager = delta
+
+[delta]
+    plus-color = "#012800"
+    minus-color = "#340001"
+
+[interactive]
+    diffFilter = delta --color-only
+
