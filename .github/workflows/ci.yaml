@@ -6,12 +6,10 @@ on:
     - master
     paths:
     - 'script/**'
-    - 'list/**'
     - '.github/**'
   pull_request:
     paths:
     - 'script/**'
-    - 'list/**'
     - '.github/**'
   schedule:
   - cron: '0 0 * * 0'

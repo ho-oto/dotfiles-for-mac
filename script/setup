@@ -23,5 +23,5 @@ installer/misc
 cat <<EOF
 You have to do the following:
 1. run tmux and press prefix + I to fetch plugins
-2. mas
+2. run installer/mas
 EOF
