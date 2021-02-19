@@ -56,17 +56,17 @@ formulascask=(
     xquartz
 )
 
-/usr/local/bin/brew update
-/usr/local/bin/brew tap homebrew/cask-fonts
+/opt/homebrew/bin/brew update
+/opt/homebrew/bin/brew tap homebrew/cask-fonts
 
 for formula in "${formulas[@]}"; do
-    if ! /usr/local/bin/brew list --versions "$formula"; then
-        /usr/local/bin/brew install "$formula"
+    if ! /opt/homebrew/bin/brew list --versions "$formula"; then
+        /opt/homebrew/bin/brew install "$formula"
     fi
 done
 
 for formula in "${formulascask[@]}"; do
-    if ! /usr/local/bin/brew list --cask --versions "$formula"; then
-        /usr/local/bin/brew install --cask "$formula"
+    if ! /opt/homebrew/bin/brew list --cask --versions "$formula"; then
+        /opt/homebrew/bin/brew install --cask "$formula"
     fi
 done
