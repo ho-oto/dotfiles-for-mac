@@ -6,6 +6,7 @@ set -euxo pipefail
 formulas=(
     bat # will be builded by cargo
     clipper
+    cmake
     dust # will be builded by cargo
     emacs
     exa # will be builded by cargo
