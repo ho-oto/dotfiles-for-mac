@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'script/**'
+    - 'list/**'
+    - '.github/**'
+  pull_request:
+    paths:
+    - 'script/**'
+    - 'list/**'
+    - '.github/**'
+  schedule:
+  - cron: '0 0 * * 0'
+
+jobs:
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest]
+    steps:
+    - name: setup
+      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ho-oto/dotfiles-for-wsl2/master/script/setup)"
+    

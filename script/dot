@@ -1,0 +1,54 @@
+#!/bin/bash
+set -euxo pipefail
+
+if [ -z "${XDG_CONFIG_HOME:-}" ]; then
+    XDG_CONFIG_HOME="$HOME/.config"
+fi
+
+DOTFILES_CONFIG="$DOTFILES_ROOT/.config"
+
+dirshome=(
+    .julia/config
+    .jupyter
+    .config
+)
+fileshome=(
+    .bashrc
+    .emacs.el
+    .profile
+    .tmux.conf
+    .julia/config/startup.jl
+    .jupyter/jupyter_notebook_config.py
+    .config/starship.toml # location of starship.toml is hard-coded as $HOME/.config, not $XDG_CONFIG_HOME
+)
+
+dirsxdgc=(
+    fish
+    git
+    nano
+)
+filesxdgc=(
+    fish/config.fish
+    # fish/fish_plugins
+    git/config
+    git/ignore
+    nano/nanorc
+)
+
+mkdir -p "$XDG_CONFIG_HOME"
+
+for DIR in "${dirshome[@]}"; do
+    mkdir -p "$HOME/$DIR"
+done
+for FILE in "${fileshome[@]}"; do
+    rm -f "$HOME/$FILE"
+    ln -s "$DOTFILES_ROOT/$FILE" "$HOME/$FILE"
+done
+
+for DIR in "${dirsxdgc[@]}"; do
+    mkdir -p "$XDG_CONFIG_HOME/$DIR"
+done
+for FILE in "${filesxdgc[@]}"; do
+    rm -f "$XDG_CONFIG_HOME/$FILE"
+    ln -s "$DOTFILES_CONFIG/$FILE" "$XDG_CONFIG_HOME/$FILE"
+done

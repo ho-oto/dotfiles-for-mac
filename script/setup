@@ -1,0 +1,27 @@
+#!/bin/bash
+set -euxo pipefail
+
+export DOTFILES_ROOT="$HOME/.dotfiles"
+
+git clone https://github.com/ho-oto/dotfiles-for-mac "$DOTFILES_ROOT"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.share"
+
+cd "$DOTFILES_ROOT/script"
+
+# ./dot
+
+installer/cargo
+installer/brew
+installer/pyenv
+installer/fisher
+installer/tmux
+installer/misc
+
+cat <<EOF
+You have to do the following:
+1. run tmux and press prefix + I to fetch plugins
+2. mas
+EOF

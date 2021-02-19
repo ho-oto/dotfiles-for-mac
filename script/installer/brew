@@ -1,0 +1,66 @@
+#!/bin/bash
+set -euxo pipefail
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+formulas=(
+    bat # will be builded by cargo
+    clipper
+    dust # will be builded by cargo
+    emacs
+    exa # will be builded by cargo
+    fd # will be builded by cargo
+    fish
+    fzf
+    gh
+    git
+    git-delta # will be builded by cargo
+    htop
+    hugo
+    hyperfine # will be builded by cargo
+    lazygit
+    macos-trash
+    mas
+    monolith # will be builded by cargo
+    ncdu
+    poppler
+    procs # will be builded by cargo
+    ripgrep # will be builded by cargo
+    ripgrep-all # will be builded by cargo
+    shellcheck
+    starship # will be builded by cargo
+    tealdeer
+    tmux
+    tokei # will be builded by cargo
+    unar
+    zoxide # will be builded by cargo
+)
+
+formulascask=(
+    1password
+    authy
+    bartender
+    bettertouchtool
+    discord
+    firefox
+    font-cica
+    google-chrome
+    iterm2
+    julia
+    microsoft-office
+    pdf-expert
+    spotify
+    veracrypt
+    visual-studio-code
+    xquartz
+)
+
+brew update
+
+for FORMULA in "${formulas[@]}"; do
+    brew install "$FORMULA"
+done
+
+for FORMULA in "${formulascask[@]}"; do
+    brew install --cask "$FORMULA"
+done
