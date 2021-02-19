@@ -57,10 +57,14 @@ formulascask=(
 
 brew update
 
-for FORMULA in "${formulas[@]}"; do
-    brew install "$FORMULA"
+for formula in "${formulas[@]}"; do
+    if ! brew list --versions "$formula"; then
+        brew install "$formula"
+    fi
 done
 
-for FORMULA in "${formulascask[@]}"; do
-    brew install --cask "$FORMULA"
+for formula in "${formulascask[@]}"; do
+    if ! brew list --cask --versions "$formula"; then
+        brew install --cask "$formula"
+    fi
 done
