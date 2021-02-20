@@ -1,25 +1,12 @@
-if [ "$TERM_PROGRAM" = "iTerm.app" ] && [[ $ITERM_PROFILE != "guake" ]]; then
-    SESSION_NAME=iterm
-    if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
-        option=""
-        if tmux has-session -t ${SESSION_NAME}; then
-            option="attach -t ${SESSION_NAME}"
-        else
-            option="new -s ${SESSION_NAME}"
-        fi
-        tmux $option && exit
+if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
+    if [[ $ITERM_PROFILE == "guake" ]]; then
+	SESSION_NAME=guake
+    else
+	SESSION_NAME=iterm
     fi
-fi
-
-if [ "$TERM_PROGRAM" = "iTerm.app" ] && [[ $ITERM_PROFILE = "guake" ]]; then
-    SESSION_NAME=guake
-    if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
-        option=""
-        if tmux has-session -t ${SESSION_NAME}; then
-            option="attach -t ${SESSION_NAME}"
-        else
-            option="new -s ${SESSION_NAME}"
-        fi
-        tmux $option && exit
+    if tmux has-session -t $SESSION_NAME; then
+	tmux attach -t $SESSION_NAME && exit
+    else
+	tmux new -s $SESSION_NAME && exit
     fi
 fi
