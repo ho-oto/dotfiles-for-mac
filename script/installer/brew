@@ -1,40 +1,44 @@
 #!/bin/bash
-set -euxo pipefail
+set -euxo
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+if [ -d /opt/homebrew ]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+fi
+
 formulas=(
-    bat # will be builded by cargo
+    bat
     clipper
     cmake
-    dust # will be builded by cargo
+    dust
     emacs
-    exa # will be builded by cargo
-    fd # will be builded by cargo
+    exa
+    fd
     fish
     fzf
     gh
     git
-    git-delta # will be builded by cargo
+    git-delta
     htop
     hugo
-    hyperfine # will be builded by cargo
+    hyperfine
     lazygit
     macos-trash
     mas
-    monolith # will be builded by cargo
+    monolith
     ncdu
     poppler
-    procs # will be builded by cargo
-    ripgrep # will be builded by cargo
+    procs
+    ripgrep
 #    ripgrep-all # will be builded by cargo
 #    shellcheck
-    starship # will be builded by cargo
+    starship
     tealdeer
     tmux
-    tokei # will be builded by cargo
+    tokei
     unar
-    zoxide # will be builded by cargo
+    zoxide
 )
 
 formulascask=(
@@ -43,6 +47,7 @@ formulascask=(
     bartender
     bettertouchtool
     discord
+    dropbox
     firefox
     font-cica
     google-chrome
@@ -56,17 +61,20 @@ formulascask=(
     xquartz
 )
 
-/opt/homebrew/bin/brew update
-/opt/homebrew/bin/brew tap homebrew/cask-fonts
+
+brew update
 
 for formula in "${formulas[@]}"; do
-    if ! /opt/homebrew/bin/brew list --versions "$formula"; then
-        /opt/homebrew/bin/brew install "$formula"
+    if ! brew list --versions "$formula"; then
+        brew install "$formula"
     fi
 done
 
+brew tap homebrew/cask-fonts
+sudo softwareupdate --install-rosetta
+
 for formula in "${formulascask[@]}"; do
-    if ! /opt/homebrew/bin/brew list --cask --versions "$formula"; then
-        /opt/homebrew/bin/brew install --cask "$formula"
+    if ! brew list --cask --versions "$formula"; then
+        brew install --cask "$formula"
     fi
 done
