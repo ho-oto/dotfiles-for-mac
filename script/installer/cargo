@@ -7,7 +7,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-mod
 repos=(
     bottom
     cargo-update
-    evcxr_jupyter
+#    evcxr_jupyter
     evcxr_repl
 )
 
@@ -15,4 +15,4 @@ for REPO in "${repos[@]}"; do
     "$HOME/.cargo/bin"/cargo install "$REPO"
 done
 
-"$HOME/.cargo/bin"/evcxr_jupyter --install
+# "$HOME/.cargo/bin"/evcxr_jupyter --install
