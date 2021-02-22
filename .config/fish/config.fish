@@ -4,6 +4,11 @@ set -x FZF_LEGACY_KEYBINDINGS 0
 set -x DOTFILES_ROOT "$HOME/.dotfiles"
 set -x PATH "$DOTFILES_ROOT/bin" $PATH
 
+set -x PYENV_ROOT "$HOME/.pyenv"
+set -x PATH "$PYENV_ROOT/bin" $PATH
+
+set -x PATH "$HOME/.cargo/bin" $PATH
+
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 alias ls="exa --icons --group-directories-first --color=auto"
