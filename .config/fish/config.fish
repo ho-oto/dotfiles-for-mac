@@ -4,10 +4,6 @@ set -x FZF_LEGACY_KEYBINDINGS 0
 set -x DOTFILES_ROOT "$HOME/.dotfiles"
 set -x PATH "$DOTFILES_ROOT/bin" $PATH
 
-if test -d /opt/homebrew
-    set -x PATH "/opt/homebrew/bin" $PATH
-end
-
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 alias ls="exa --icons --group-directories-first --color=auto"
@@ -43,6 +39,11 @@ pyenv init - | source
 zoxide init fish | source
 
 # for Mac
+
+if test -d /opt/homebrew # for homebrew on ARM64
+    set -x PATH "/opt/homebrew/bin" "/opt/homebrew/sbin" $PATH
+end
+
 alias rm="trash"
 
 function brew
