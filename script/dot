@@ -12,8 +12,6 @@ dirshome=(
     .config
 )
 fileshome=(
-    .bashrc
-    .bash_profile
     .zshrc
     .zprofile
     .emacs.el
