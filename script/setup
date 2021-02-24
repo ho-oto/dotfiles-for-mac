@@ -18,6 +18,7 @@ installer/fisher
 installer/tmux
 installer/pyenv
 installer/cargo
+installer/clipper
 
 cat <<EOF
 You have to do the following:
