@@ -53,7 +53,7 @@ alias rm="trash"
 
 function brew
     set --export --local PATH $PATH
-    if type --quiet pyenv; and contains (pyenv root)/shims $PATH
+    if type -q pyenv; and contains (pyenv root)/shims $PATH
         set --erase PATH[(contains --index (pyenv root)/shims $PATH)]
     end
     command brew $argv
