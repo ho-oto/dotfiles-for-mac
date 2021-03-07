@@ -1,4 +1,11 @@
 #!/bin/bash
+set -euxo
+
+if [[ "$(uname -m)" == "arm64" ]]; then
+    CLIPPER_PATH="/opt/homebrew/bin"
+else
+    CLIPPER_PATH="/usr/local/bin"
+fi
 
 cat <<EOF > com.wincent.clipper.plist
 <?xml version="1.0" encoding="UTF-8"?>
@@ -9,7 +16,7 @@ cat <<EOF > com.wincent.clipper.plist
 	<string>com.wincent.clipper</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/opt/homebrew/bin/clipper</string>
+		<string>$CLIPPER_PATH/clipper</string>
 	</array>
 	<key>EnvironmentVariables</key>
 	<dict>
