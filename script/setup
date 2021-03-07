@@ -20,8 +20,11 @@ installer/pyenv
 installer/cargo
 installer/clipper
 
+if [ -z "${CI:-}" ]; then
+    installer/mas
+fi
+
 cat <<EOF
 You have to do the following:
 1. run tmux and press prefix + I to fetch plugins
-2. run installer/mas
 EOF
