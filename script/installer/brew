@@ -3,7 +3,7 @@ set -euxo
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-if [ -d /opt/homebrew ]; then
+if [ -d /opt/homebrew ]; then # On ARM macOS, brew will be installed to /opt/homebrew
     export PATH="/opt/homebrew/bin:$PATH"
 fi
 
@@ -73,7 +73,9 @@ for formula in "${formulas[@]}"; do
 done
 
 brew tap homebrew/cask-fonts
-sudo softwareupdate --install-rosetta
+if [[ "$(uname -m)" == "arm64" ]]; then
+    sudo softwareupdate --install-rosetta
+fi
 
 for formula in "${formulascask[@]}"; do
     if ! brew list --cask --versions "$formula"; then
