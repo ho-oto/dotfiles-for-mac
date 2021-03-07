@@ -23,8 +23,10 @@ formulas=(
     htop
     hugo
     hyperfine
+    latexit
     lazygit
     macos-trash
+    mactex-no-gui
     mas
     monolith
     ncdu
