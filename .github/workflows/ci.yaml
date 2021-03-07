@@ -21,7 +21,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-11.0]
+#        os: [macos-11.0]
+        os: [macos-latest]      
     steps:
     - name: setup
       run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ho-oto/dotfiles-for-mac/master/script/setup)"
