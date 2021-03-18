@@ -83,3 +83,5 @@ for formula in "${formulascask[@]}"; do
         brew install --cask "$formula"
     fi
 done
+
+brew services start clipper

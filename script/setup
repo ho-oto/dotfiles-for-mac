@@ -18,7 +18,6 @@ installer/fisher
 installer/tmux
 installer/pyenv
 installer/cargo
-installer/clipper
 
 if [ -z "${CI:-}" ]; then
     installer/mas
