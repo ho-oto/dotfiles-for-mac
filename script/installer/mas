@@ -4,7 +4,6 @@ set -euxo pipefail
 ids=(
     409183694 # Keynote
     497799835 # Xcode
-    803453959 # Slack
     937984704 # Amphetamine
     1176895641 # Spark
     1295203466 # Microsoft Remote Desktop
