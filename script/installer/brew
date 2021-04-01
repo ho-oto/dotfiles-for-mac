@@ -55,11 +55,13 @@ formulascask=(
     google-chrome
     iterm2
     julia
+    krisp
     microsoft-office
     pdf-expert
     slack
     spotify
     visual-studio-code
+    wolfram-engine
     xquartz
     zoom
 )
