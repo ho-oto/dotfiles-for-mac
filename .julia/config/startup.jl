@@ -6,4 +6,14 @@ atreplinit() do repl
     else
         @warn("OhMyREPL not installed")
     end
+    if any(pkg.name == "BenchmarkTools" for (id, pkg) in Pkg.dependencies())
+        @eval using BenchmarkTools
+    else
+        @warn("BenchmarkTools not installed")
+    end
+    if any(pkg.name == "TerminalPager" for (id, pkg) in Pkg.dependencies())
+        @eval using TerminalPager
+    else
+        @warn("TerminalPager not installed")
+    end
 end
