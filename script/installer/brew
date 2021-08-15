@@ -62,7 +62,7 @@ formulascask=(
     slack
     spotify
     visual-studio-code
-    wolfram-engine
+    # wolfram-engine
     xquartz
     zoom
 )
