@@ -45,6 +45,7 @@ formulas=(
 
 formulascask=(
     1password
+    alfred
     authy
     bartender
     bettertouchtool
@@ -57,7 +58,10 @@ formulascask=(
     iterm2
     julia
     krisp
+    latexit
     loopback
+    mactex-no-gui
+    microsoft-edge
     microsoft-office
     pdf-expert
     slack
