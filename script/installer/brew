@@ -57,6 +57,7 @@ formulascask=(
     iterm2
     julia
     krisp
+    loopback
     microsoft-office
     pdf-expert
     slack
