@@ -9,7 +9,7 @@
 # .python-version
 __pycache__/
 
-.vscode
+#.vscode
 #.vscode/*
 #!.vscode/settings.json
 #!.vscode/tasks.json
