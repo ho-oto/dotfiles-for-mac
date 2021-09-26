@@ -49,6 +49,7 @@ formulascask=(
     authy
     bartender
     bettertouchtool
+    deepl
     discord
     dropbox
     firefox
@@ -63,6 +64,7 @@ formulascask=(
     mactex-no-gui
     microsoft-edge
     microsoft-office
+    # monitorcontrol
     pdf-expert
     slack
     spotify
