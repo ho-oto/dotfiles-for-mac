@@ -32,6 +32,7 @@ formulas=(
     ncdu
     poppler
     procs
+    pueue
     ripgrep
     ripgrep-all
     shellcheck
@@ -96,3 +97,4 @@ for formula in "${formulascask[@]}"; do
 done
 
 brew services start clipper
+brew services start pueue
