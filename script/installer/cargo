@@ -5,9 +5,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-mod
 # "$HOME/.cargo/bin"/rustup component add rust-src
 
 repos=(
-    bottom
     cargo-update
-    viu
     # evcxr_jupyter
     # evcxr_repl
 )

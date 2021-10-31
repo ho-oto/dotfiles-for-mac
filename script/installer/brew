@@ -9,6 +9,7 @@ fi
 
 formulas=(
     bat
+    bottom
     clipper
     cmake
     dust
@@ -41,6 +42,7 @@ formulas=(
     tmux
     tokei
     unar
+    viu
     zoxide
 )
 
