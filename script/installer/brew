@@ -67,7 +67,7 @@ formulascask=(
     mactex-no-gui
     microsoft-edge
     microsoft-office
-    # monitorcontrol
+    monitorcontrol
     pdf-expert
     slack
     spotify
