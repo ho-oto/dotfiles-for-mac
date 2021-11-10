@@ -49,7 +49,7 @@ formulas=(
 formulascask=(
     1password
     alfred
-    authy
+    # authy
     bartender
     bettertouchtool
     deepl
