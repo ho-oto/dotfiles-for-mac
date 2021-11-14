@@ -2,6 +2,7 @@
 set -euxo pipefail
 
 ids=(
+    360593530 # Notability
     409183694 # Keynote
     494168017 # Authy (iPad)
     497799835 # Xcode
