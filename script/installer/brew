@@ -21,6 +21,7 @@ formulas=(
     gh
     git
     git-delta
+    git-lfs
     htop
     hugo
     hyperfine
