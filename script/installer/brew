@@ -49,8 +49,8 @@ formulas=(
 
 formulascask=(
     1password
+    adobe-acrobat-reader
     alfred
-    # authy
     bartender
     bettertouchtool
     deepl
@@ -74,7 +74,7 @@ formulascask=(
     spotify
     veracrypt
     visual-studio-code
-    # wolfram-engine
+    wezterm
     xquartz
     zoom
 )
