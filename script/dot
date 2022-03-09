@@ -24,12 +24,14 @@ fileshome=(
 dirsxdgc=(
     fish
     git
+    wezterm
 )
 filesxdgc=(
     fish/config.fish
     # fish/fish_plugins
     git/config
     git/ignore
+    wezterm/wezterm.lua
 )
 
 mkdir -p "$XDG_CONFIG_HOME"
