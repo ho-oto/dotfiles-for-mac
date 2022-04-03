@@ -25,6 +25,7 @@ formulas=(
     htop
     hugo
     hyperfine
+    jq
     latexit
     lazygit
     macos-trash
