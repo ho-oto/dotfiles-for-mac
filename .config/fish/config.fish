@@ -38,6 +38,7 @@ abbr --add gcam git commit -am
 abbr --add gs git status
 abbr --add gd git diff
 abbr --add gp git push
+abbr --add gfix git commit --amend --no-edit
 
 starship init fish | source
 pyenv init - | source
