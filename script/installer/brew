@@ -12,6 +12,8 @@ formulas=(
     bottom
     clipper
     cmake
+    difftastic
+    direnv
     dust
     emacs
     exa
@@ -25,6 +27,7 @@ formulas=(
     htop
     hugo
     hyperfine
+    jc
     jq
     latexit
     lazygit
@@ -45,6 +48,7 @@ formulas=(
     tokei
     unar
     viu
+    xh
     zoxide
 )
 
