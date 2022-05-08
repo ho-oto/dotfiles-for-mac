@@ -20,7 +20,6 @@ formulas=(
     fd
     fish
     fzf
-    gh
     git
     git-delta
     git-lfs
@@ -58,6 +57,7 @@ formulascask=(
     alfred
     bartender
     bettertouchtool
+    cmd-eikana
     deepl
     discord
     dropbox
