@@ -20,7 +20,8 @@ formulas=(
     fd
     fish
     fzf
-    git
+    # gh
+    # git
     git-delta
     git-lfs
     htop
