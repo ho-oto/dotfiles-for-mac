@@ -8,8 +8,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-if [ -d /opt/homebrew ]; then
-    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
-fi
+[ -d /opt/homebrew ] && export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"

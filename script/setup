@@ -11,9 +11,8 @@ export XDG_DATA_HOME="$HOME/.share"
 
 ./dot
 ./brew
-./pyenv
+./misc
 ./fisher
-./tmux
 ./cargo
 [ -z "${CI:-}" ] && ./mas
 

@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 set -euxo
 
-if [ -z "${XDG_CONFIG_HOME:-}" ]; then
-    XDG_CONFIG_HOME="$HOME/.config"
-fi
-
-DOTFILES_CONFIG="$DOTFILES_ROOT/.config"
+[ -z "${XDG_CONFIG_HOME:-}" ] && XDG_CONFIG_HOME="$HOME/.config"
 
 dirshome=(
     .julia/config
@@ -40,7 +36,7 @@ for DIR in "${dirshome[@]}"; do
 done
 for FILE in "${fileshome[@]}"; do
     rm -f "$HOME/$FILE"
-    ln -s "$DOTFILES_ROOT/$FILE" "$HOME/$FILE"
+    ln -s "$DOTFILES_ROOT/config/$FILE" "$HOME/$FILE"
 done
 
 for DIR in "${dirsxdgc[@]}"; do
@@ -48,5 +44,5 @@ for DIR in "${dirsxdgc[@]}"; do
 done
 for FILE in "${filesxdgc[@]}"; do
     rm -f "$XDG_CONFIG_HOME/$FILE"
-    ln -s "$DOTFILES_CONFIG/$FILE" "$XDG_CONFIG_HOME/$FILE"
+    ln -s "$DOTFILES_ROOT/config/.config/$FILE" "$XDG_CONFIG_HOME/$FILE"
 done

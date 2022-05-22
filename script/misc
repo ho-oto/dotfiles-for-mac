@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 set -euxo
 
+git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"
 git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
