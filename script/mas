@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euxo
 
-ids=(
+appids=(
     360593530 # Notability
     409183694 # Keynote
     494168017 # Authy (iPad)
@@ -14,6 +14,6 @@ ids=(
     1475387142 # Tailscale
 )
 
-for id in "${ids[@]}"; do
-    mas install "$id"
+for appid in "${appids[@]}"; do
+    mas install "$appid"
 done

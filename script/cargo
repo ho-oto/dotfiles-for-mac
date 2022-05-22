@@ -4,14 +4,14 @@ set -euxo pipefail
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
 # "$HOME/.cargo/bin"/rustup component add rust-src
 
-repos=(
+crates=(
     cargo-update
     # evcxr_jupyter
     # evcxr_repl
 )
 
-for REPO in "${repos[@]}"; do
-    "$HOME/.cargo/bin"/cargo install "$REPO"
+for crate in "${crates[@]}"; do
+    "$HOME/.cargo/bin"/cargo install "$crate"
 done
 
 # "$HOME/.cargo/bin"/evcxr_jupyter --install
