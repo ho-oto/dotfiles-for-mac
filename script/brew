@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euxo
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -19,6 +19,7 @@ formulas=(
     exa
     fd
     fish
+    fisher
     fzf
     # gh
     # git
@@ -84,7 +85,6 @@ formulascask=(
     xquartz
     zoom
 )
-
 
 brew update
 

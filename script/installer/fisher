@@ -1,7 +1,0 @@
-#!/usr/bin/env fish
-
-curl -sL https://git.io/fisher | source
-fisher install jorgebucaran/fisher
-rm -f "$XDG_CONFIG_HOME/fish/fish_plugins"
-ln -s "$DOTFILES_ROOT/.config/fish/fish_plugins" "$XDG_CONFIG_HOME/fish/fish_plugins"
-fisher update

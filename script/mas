@@ -1,5 +1,5 @@
-#!/bin/bash
-set -euxo pipefail
+#!/usr/bin/env bash
+set -euxo
 
 ids=(
     360593530 # Notability

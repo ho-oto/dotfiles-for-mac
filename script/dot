@@ -1,5 +1,5 @@
-#!/bin/bash
-set -euxo pipefail
+#!/usr/bin/env bash
+set -euxo
 
 if [ -z "${XDG_CONFIG_HOME:-}" ]; then
     XDG_CONFIG_HOME="$HOME/.config"
@@ -28,7 +28,6 @@ dirsxdgc=(
 )
 filesxdgc=(
     fish/config.fish
-    # fish/fish_plugins
     git/config
     git/ignore
     wezterm/wezterm.lua

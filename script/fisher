@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+plugins=(
+    jorgebucaran/fisher
+    jethrokuan/fzf
+    dracula/fish
+    edc/bass
+    jorgebucaran/autopair.fish
+)
+
+for plugin in "${plugins[@]}"; do
+    fish -c "fisher install $plugin"
+done
