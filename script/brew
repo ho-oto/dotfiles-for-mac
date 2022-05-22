@@ -24,8 +24,8 @@ formulas=(
     fish
     fisher
     fzf
-    # gh
-    # git
+    gh
+    git
     git-delta
     git-lfs
     htop
