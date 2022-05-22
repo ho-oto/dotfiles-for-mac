@@ -15,7 +15,7 @@ export XDG_DATA_HOME="$HOME/.share"
 ./fisher
 ./tmux
 ./cargo
-if [ -z "${CI:-}" ]; then ./mas; fi
+[ -z "${CI:-}" ] && ./mas
 
 cat <<EOF
 You have to do the following:
