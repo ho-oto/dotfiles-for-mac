@@ -30,9 +30,11 @@ abbr --add gd git diff
 abbr --add gp git push
 abbr --add gfix git commit --amend --no-edit
 
-starship init fish | source
-pyenv init - | source
-zoxide init fish | source
+if status is-interactive
+    starship init fish | source
+    pyenv init - | source
+    zoxide init fish | source
+end
 
 # for Mac
 alias rm="trash"

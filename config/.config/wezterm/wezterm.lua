@@ -93,7 +93,8 @@ return {
             {key = "q", action = wezterm.action {
                 SendKey = {key = "q", mods = "CTRL"}
             }},
-            {key = "Escape", action = "PopKeyTable"}
+            {key = "Escape", action = "PopKeyTable"},
+            {key = "Enter", action = "PopKeyTable"},
         }
     }
 }
