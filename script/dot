@@ -6,6 +6,7 @@ set -euxo
 dirshome=(
     .julia/config
     .config
+    .hammerspoon
 )
 fileshome=(
     .zshrc
@@ -15,6 +16,7 @@ fileshome=(
     .clipper.json
     .julia/config/startup.jl
     .config/starship.toml # location of starship.toml is hard-coded as $HOME/.config, not $XDG_CONFIG_HOME
+    .hammerspoon/init.lua
 )
 
 dirsxdgc=(
