@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 set -euxo
 
+export XDG_CONFIG_HOME="$HOME/.config"
 export DOTFILES_ROOT="$HOME/.dotfiles"
+
 git clone -b "${GITHUB_REF_NAME:-"master"}" https://github.com/ho-oto/dotfiles-for-mac "$DOTFILES_ROOT"
 cd "$DOTFILES_ROOT/script"
-
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.share"
 
 ./dot
 ./brew
