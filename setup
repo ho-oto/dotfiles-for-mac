@@ -2,7 +2,7 @@
 set -euxo
 
 export DOTFILES_ROOT="$HOME/.dotfiles"
-git clone -b {GITHUB_REF_NAME:-"master"} https://github.com/ho-oto/dotfiles-for-mac "$DOTFILES_ROOT"
+git clone -b ${GITHUB_REF_NAME:-"master"} https://github.com/ho-oto/dotfiles-for-mac "$DOTFILES_ROOT"
 cd "$DOTFILES_ROOT/script"
 
 export XDG_CONFIG_HOME="$HOME/.config"
