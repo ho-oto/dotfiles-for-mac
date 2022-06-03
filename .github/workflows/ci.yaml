@@ -5,6 +5,7 @@ on:
     paths:
     - 'script/**'
     - '.github/**'
+    - 'setup'
   pull_request:
     paths:
     - 'script/**'
