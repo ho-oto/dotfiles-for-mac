@@ -2,7 +2,7 @@ local application = require "hs.application"
 local window      = require "hs.window"
 local hotkey      = require "hs.hotkey"
 
-hotkey.bind({ 'ctrl', 'cmd' }, 'x', function()
+hotkey.bind({ 'ctrl', 'cmd' }, 'z', function()
     local wezterm = application.get("WezTerm")
     if not wezterm then -- launch WezTerm if not launched
         application.launchOrFocus("WezTerm")
