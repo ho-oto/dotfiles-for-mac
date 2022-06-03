@@ -2,7 +2,7 @@
 set -euxo
 
 export DOTFILES_ROOT="$HOME/.dotfiles"
-git clone https://github.com/ho-oto/dotfiles-for-mac "$DOTFILES_ROOT"
+git clone -b {GITHUB_REF_NAME:-"master"} https://github.com/ho-oto/dotfiles-for-mac "$DOTFILES_ROOT"
 cd "$DOTFILES_ROOT/script"
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -15,8 +15,3 @@ export XDG_DATA_HOME="$HOME/.share"
 ./fisher
 ./cargo
 [ -z "${CI:-}" ] && ./mas
-
-cat <<EOF
-You have to do the following:
-1. run tmux and press prefix + I to fetch plugins
-EOF
