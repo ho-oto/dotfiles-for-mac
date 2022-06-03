@@ -2,8 +2,6 @@ name: CI
 
 on:
   push:
-    branches:
-    - master
     paths:
     - 'script/**'
     - '.github/**'
@@ -24,4 +22,4 @@ jobs:
         os: [macos-latest]
     steps:
     - name: setup
-      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ho-oto/dotfiles-for-mac/master/script/setup)"
+      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ho-oto/dotfiles-for-mac/master/setup)"
