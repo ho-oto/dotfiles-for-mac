@@ -27,8 +27,8 @@ end);
 
 return {
     default_prog = { "zsh", "-lc", [[exec fish]] },
-    font = wezterm.font_with_fallback({ "Cica", "JetBrains Mono", "Fira Code" }),
-    font_size = 15,
+    font = wezterm.font_with_fallback({ "HackGenNerd", "Cica", "JetBrains Mono", "Fira Code" }),
+    font_size = 14,
     tab_bar_at_bottom = true,
     color_scheme = "Dracula",
     window_background_opacity = 0.9,

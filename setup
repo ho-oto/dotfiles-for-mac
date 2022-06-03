@@ -13,3 +13,5 @@ cd "$DOTFILES_ROOT/script"
 ./fisher
 ./cargo
 [ -z "${CI:-}" ] && ./mas
+
+exit 0

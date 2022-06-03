@@ -67,7 +67,12 @@ formulascask=(
     discord
     dropbox
     firefox
+    font-cascadia-code
     font-cica
+    font-fira-code
+    font-hackgen
+    font-hackgen-nerd
+    font-jetbrains-mono
     font-juliamono
     google-chrome
     hammerspoon
