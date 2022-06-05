@@ -3,18 +3,13 @@ local wezterm = require 'wezterm'
 local ssh_domains = {}
 
 for host, config in pairs(wezterm.enumerate_ssh_hosts()) do
-    if host == "xps" then
-        table.insert(ssh_domains, {
-            name = host,
-            remote_address = config["hostname"],
-            username = config["user"],
-            ssh_option = {
-                identityfile = config["identityfile"]
-            },
-            remote_wezterm_path = "/home/linuxbrew/.linuxbrew/bin/wezterm",
-            assume_shell = "Posix"
-        })
-    end
+    table.insert(ssh_domains, {
+        name = host,
+        remote_address = config["hostname"],
+        username = config["user"],
+        ssh_option = { identityfile = config["identityfile"] },
+        assume_shell = "Posix"
+    })
 end
 
 local keys = {
@@ -77,6 +72,8 @@ return {
     font = wezterm.font_with_fallback({ "HackGenNerd", "Cica", "JetBrains Mono", "Fira Code" }),
     font_size = 14,
     scrollback_lines = 10000,
+    initial_rows = 32,
+    initial_cols = 250,
     tab_bar_at_bottom = true,
     color_scheme = "Dracula",
     window_background_opacity = 0.9,
