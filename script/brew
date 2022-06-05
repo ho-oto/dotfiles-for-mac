@@ -10,6 +10,8 @@ set -euxo
 brew update
 brew tap homebrew/cask-fonts
 
+[ -n "${CI:-}" ] && rm /usr/local/bin/julia # remove preinstall julia to pass CI
+
 formulas=(
     bat           # https://github.com/sharkdp/bat              | alternative of cat
     bottom        # https://github.com/ClementTsang/bottom      | alternative of top
