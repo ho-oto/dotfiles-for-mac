@@ -20,28 +20,28 @@ formulas=(
     difftastic  # https://github.com/Wilfred/difftastic       | structual diff tool
     direnv      # https://github.com/direnv/direnv            |
     dust        # https://github.com/bootandy/dust            | alternative of du
-    emacs       # https://www.gnu.org/software/emacs/         |
+    emacs       # https://www.gnu.org/software/emacs          |
     exa         # https://github.com/ogham/exa                | alternative of ls
     fd          # https://github.com/sharkdp/fd               | alternative of find
-    fish        # https://fishshell.com/                      | user-friendly shell
+    fish        # https://fishshell.com                       | user-friendly shell
     fisher      # https://github.com/jorgebucaran/fisher      | package manager for fish
     fzf         # https://github.com/junegunn/fzf             | fuzzy finder
     gh          # https://github.com/cli/cli                  | GitHub cli
-    git         # https://git-scm.com/                        |
+    git         # https://git-scm.com                         |
     git-delta   # https://github.com/dandavison/delta         | syntax-highlighting pager
-    git-lfs     # https://git-lfs.github.com/                 |
-    htop        # https://htop.dev/                           | alternative of top
-    hugo        # https://gohugo.io/                          | static site generator
+    git-lfs     # https://git-lfs.github.com                  |
+    htop        # https://htop.dev                            | alternative of top
+    hugo        # https://gohugo.io                           | static site generator
     hyperfine   # https://github.com/sharkdp/hyperfine        | benchmark tool
     jc          # https://github.com/kellyjonbrazil/jc        | convert outputs of cli to JSON
     juliaup     # https://github.com/JuliaLang/juliaup        | julia version manager
-    jq          # https://stedolan.github.io/jq/              | JSON processor
+    jq          # https://stedolan.github.io/jq               | JSON processor
     lazygit     # https://github.com/jesseduffield/lazygit    | git TUI
     macos-trash # https://github.com/sindresorhus/macos-trash | use Trash from cli
     mas         # https://github.com/mas-cli/mas              | Mac App Strore cli
     monolith    # https://github.com/Y2Z/monolith             | save web pages
     ncdu        # https://dev.yorhel.nl/ncdu                  | alternative of du
-    poppler     # https://poppler.freedesktop.org/            | PDF library
+    poppler     # https://poppler.freedesktop.org             | PDF library
     procs       # https://github.com/dalance/procs            | alternative of ps
     pueue       # https://github.com/Nukesor/pueue            | command line task manager
     ripgrep     # https://github.com/BurntSushi/ripgrep       | alternative of grep

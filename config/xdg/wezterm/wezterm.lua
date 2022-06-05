@@ -43,12 +43,22 @@ return {
     key_tables = {
         pane = {
             -- make pane
-            { key = "|", action = wezterm.action {
-                SplitHorizontal = { domain = "CurrentPaneDomain" }
-            } },
-            { key = "-", action = wezterm.action {
-                SplitVertical = { domain = "CurrentPaneDomain" }
-            } },
+            { key = "|", action = wezterm.action_callback(
+                function(window, pane)
+                    window:perform_action("PopKeyTable", pane)
+                    window:perform_action(
+                        wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } }, pane
+                    )
+                end
+            ) },
+            { key = "-", action = wezterm.action_callback(
+                function(window, pane)
+                    window:perform_action("PopKeyTable", pane)
+                    window:perform_action(
+                        wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } }, pane
+                    )
+                end
+            ) },
             -- move pane
             { key = "LeftArrow", action = wezterm.action {
                 ActivatePaneDirection = "Left"
@@ -76,12 +86,22 @@ return {
                 AdjustPaneSize = { "Down", 1 }
             } },
             -- make tab
-            { key = "c", action = wezterm.action {
-                SpawnTab = "CurrentPaneDomain"
-            } },
-            { key = "x", action = wezterm.action {
-                CloseCurrentTab = { confirm = false }
-            } },
+            { key = "c", action = wezterm.action_callback(
+                function(window, pane)
+                    window:perform_action("PopKeyTable", pane)
+                    window:perform_action(
+                        wezterm.action { SpawnTab = "CurrentPaneDomain" }, pane
+                    )
+                end
+            ) },
+            { key = "x", action = wezterm.action_callback(
+                function(window, pane)
+                    window:perform_action("PopKeyTable", pane)
+                    window:perform_action(
+                        wezterm.action { CloseCurrentTab = { confirm = false } }, pane
+                    )
+                end
+            ) },
             -- move tab
             { key = "Tab", action = wezterm.action {
                 ActivateTabRelative = 1

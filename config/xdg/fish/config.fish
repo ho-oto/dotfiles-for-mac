@@ -30,6 +30,11 @@ abbr --add gd git diff
 abbr --add gp git push
 abbr --add gfix git commit --amend --no-edit
 
+if test $TERM_PROGRAM = "WezTerm"
+    abbr --add wec wezterm connect
+    abbr --add wes wezterm ssh
+end
+
 if status is-interactive
     starship init fish | source
     pyenv init - | source
