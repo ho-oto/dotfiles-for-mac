@@ -32,11 +32,10 @@ formulas=(
     hugo          # https://gohugo.io/                          | static site generator
     hyperfine     # https://github.com/sharkdp/hyperfine        | benchmark tool
     jc            # https://github.com/kellyjonbrazil/jc        | convert outputs of cli to JSON
+    juliaup       # https://github.com/JuliaLang/juliaup        | julia version manager
     jq            # https://stedolan.github.io/jq/              | JSON processor
-    latexit       # https://www.chachatelier.fr/latexit/        |
     lazygit       # https://github.com/jesseduffield/lazygit    | git TUI
     macos-trash   # https://github.com/sindresorhus/macos-trash | use Trash from cli
-    mactex-no-gui # https://www.tug.org/mactex/                 |
     mas           # https://github.com/mas-cli/mas              | Mac App Strore cli
     monolith      # https://github.com/Y2Z/monolith             | save web pages
     ncdu          # https://dev.yorhel.nl/ncdu                  | alternative of du
@@ -77,7 +76,6 @@ formulascask=(
     google-chrome
     hammerspoon
     iterm2
-    julia
     krisp
     latexit
     loopback
