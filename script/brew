@@ -11,49 +11,49 @@ brew update
 brew tap homebrew/cask-fonts
 
 formulas=(
-    bat
-    bottom
-    clipper
-    cmake
-    difftastic
-    direnv
-    dust
-    emacs
-    exa
-    fd
-    fish
-    fisher
-    fzf
-    gh
-    git
-    git-delta
-    git-lfs
-    htop
-    hugo
-    hyperfine
-    jc
-    jq
-    latexit
-    lazygit
-    macos-trash
-    mactex-no-gui
-    mas
-    monolith
-    ncdu
-    poppler
-    procs
-    pueue
-    ripgrep
-    ripgrep-all
-    shellcheck
-    starship
-    tealdeer
-    tmux
-    tokei
-    unar
-    viu
-    xh
-    zoxide
+    bat           # https://github.com/sharkdp/bat              | alternative of cat
+    bottom        # https://github.com/ClementTsang/bottom      | alternative of top
+    clipper       # https://github.com/wincent/clipper          | clipbpard access
+    cmake         # https://cmake.org                           |
+    difftastic    # https://github.com/Wilfred/difftastic       | structual diff tool
+    direnv        # https://github.com/direnv/direnv            |
+    dust          # https://github.com/bootandy/dust            | alternative of du
+    emacs         # https://www.gnu.org/software/emacs/         |
+    exa           # https://github.com/ogham/exa                | alternative of ls
+    fd            # https://github.com/sharkdp/fd               | alternative of find
+    fish          # https://fishshell.com/                      | user-friendly shell
+    fisher        # https://github.com/jorgebucaran/fisher      | package manager for fish
+    fzf           # https://github.com/junegunn/fzf             | fuzzy finder
+    gh            # https://github.com/cli/cli                  | GitHub cli
+    git           # https://git-scm.com/                        |
+    git-delta     # https://github.com/dandavison/delta         | syntax-highlighting pager
+    git-lfs       # https://git-lfs.github.com/                 |
+    htop          # https://htop.dev/                           | alternative of top
+    hugo          # https://gohugo.io/                          | static site generator
+    hyperfine     # https://github.com/sharkdp/hyperfine        | benchmark tool
+    jc            # https://github.com/kellyjonbrazil/jc        | convert outputs of cli to JSON
+    jq            # https://stedolan.github.io/jq/              | JSON processor
+    latexit       # https://www.chachatelier.fr/latexit/        |
+    lazygit       # https://github.com/jesseduffield/lazygit    | git TUI
+    macos-trash   # https://github.com/sindresorhus/macos-trash | use Trash from cli
+    mactex-no-gui # https://www.tug.org/mactex/                 |
+    mas           # https://github.com/mas-cli/mas              | Mac App Strore cli
+    monolith      # https://github.com/Y2Z/monolith             | save web pages
+    ncdu          # https://dev.yorhel.nl/ncdu                  | alternative of du
+    poppler       # https://poppler.freedesktop.org/            | PDF library
+    procs         # https://github.com/dalance/procs            | alternative of ps
+    pueue         # https://github.com/Nukesor/pueue            | command line task manager
+    ripgrep       # https://github.com/BurntSushi/ripgrep       | alternative of grep
+    ripgrep-all   # https://github.com/phiresky/ripgrep-all     |
+    shellcheck    # https://github.com/koalaman/shellcheck      | linter for sh
+    starship      # https://starship.rs                         | prompto
+    tealdeer      # https://github.com/dbrgn/tealdeer           | Rust implements of tldr
+    tmux          # https://github.com/tmux/tmux                |
+    tokei         # https://github.com/XAMPPRocky/tokei         | count source code
+    unar          # https://theunarchiver.com/command-line      | alternative of tar, unzip
+    viu           # https://github.com/atanunq/viu              | terminal image viewer
+    xh            # https://github.com/ducaale/xh               | alternative of curl
+    zoxide        # https://github.com/ajeetdsouza/zoxide       | alternative of cd
 )
 
 formulascask=(
