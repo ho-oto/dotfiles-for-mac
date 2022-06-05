@@ -2,12 +2,12 @@
 set -euxo
 
 appids=(
-    360593530 # Notability
-    409183694 # Keynote
-    494168017 # Authy (iPad)
-    497799835 # Xcode
-    539883307 # LINE
-    937984704 # Amphetamine
+    360593530  # Notability
+    409183694  # Keynote
+    494168017  # Authy (iPad)
+    497799835  # Xcode
+    539883307  # LINE
+    937984704  # Amphetamine
     1176895641 # Spark
     1295203466 # Microsoft Remote Desktop
     1355679052 # Dropover

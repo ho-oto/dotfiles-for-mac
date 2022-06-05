@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-set -euxo
+set -euxo pipefail
 
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+
+# Python
 git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"
+
+# tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
