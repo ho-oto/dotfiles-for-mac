@@ -64,6 +64,9 @@ local tabbar_bg = "#282a36"
 local tabbar_fg = "#f8f8f2"
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+    local tab_index = tab.tab_index + 1
+    local is_first = (tab.tab_index == 0)
+    local is_last = (tab.tab_index == #tabs - 1)
     local SOLID_RIGHT_ARROW = utf8.char(0xe0bc)
 
     local foreground = "#f8f8f2"
@@ -75,48 +78,46 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
         background = "#ffb86c"
     end
 
-    local title = wezterm.truncate_right(tab.active_pane.title, max_width - 2)
-    if title == "" then
-        title = wezterm.truncate_right(
-            string.gsub(tab.active_pane.current_working_dir, "(.*[/\\])(.*)", "%2"),
-            max_width
-        )
+    local max_title_length = max_width - wezterm.column_width(tab_index .. "  :   ") - 2
+    if is_first then
+        max_title_length = max_width - wezterm.column_width(tab_index .. " :   ") - 1
+    elseif is_last then
+        max_title_length = max_width - wezterm.column_width(tab_index .. "  :   ") - 4
     end
+
+
+    local title = tab.active_pane.title
+    if title == "" then
+        title = string.gsub(tab.active_pane.current_working_dir, "(.*[/\\])(.*)", "%2")
+    end
+    title = wezterm.truncate_right(title, max_title_length)
 
     local left_color = tabbar_fg
-    if tab.tab_index == 0 then left_color = background end
+    if is_first then left_color = background end
 
-    local text = " " .. tab.tab_index + 1 .. ": " .. title .. "  "
-    if tab.tab_index ~= 0 then text = " " .. text end
+    local text = " " .. tab_index .. ": " .. title .. "  "
+    if not is_first then text = " " .. text end
 
-    if tab.tab_index + 1 ~= #tabs then
-        return {
-            { Background = { Color = background } },
-            { Foreground = { Color = left_color } },
-            { Text = SOLID_RIGHT_ARROW },
-            { Background = { Color = background } },
-            { Foreground = { Color = foreground } },
-            { Text = text },
-            { Background = { Color = tabbar_fg } },
-            { Foreground = { Color = background } },
-            { Text = SOLID_RIGHT_ARROW }
-        }
-    else
-        return {
-            { Background = { Color = background } },
-            { Foreground = { Color = left_color } },
-            { Text = SOLID_RIGHT_ARROW },
-            { Background = { Color = background } },
-            { Foreground = { Color = foreground } },
-            { Text = text },
-            { Background = { Color = tabbar_fg } },
-            { Foreground = { Color = background } },
-            { Text = SOLID_RIGHT_ARROW },
-            { Background = { Color = tabbar_bg } },
-            { Foreground = { Color = tabbar_fg } },
-            { Text = SOLID_RIGHT_ARROW .. " " }
-        }
+    local elements = {
+        { Background = { Color = background } },
+        { Foreground = { Color = left_color } },
+        { Text = SOLID_RIGHT_ARROW },
+        { Background = { Color = background } },
+        { Foreground = { Color = foreground } },
+        { Text = text },
+        { Background = { Color = tabbar_fg } },
+        { Foreground = { Color = background } },
+        { Text = SOLID_RIGHT_ARROW }
+    }
+
+    if is_last then
+        table.insert(elements, { Background = { Color = tabbar_bg } })
+        table.insert(elements, { Foreground = { Color = tabbar_fg } })
+        table.insert(elements, { Text = SOLID_RIGHT_ARROW .. " " })
     end
+
+    return elements
+
 end)
 
 wezterm.on("update-right-status", function(window, pane)
@@ -185,5 +186,6 @@ return {
     use_fancy_tab_bar = false,
     colors = {
         tab_bar = { background = tabbar_bg },
-    }
+    },
+    tab_max_width = 24,
 }
