@@ -55,6 +55,14 @@ local key_tables = {
         end) },
         { key = "q", action = wezterm.action { SendKey = { key = "q", mods = "CTRL" } } },
         { key = "l", action = "ShowLauncher" },
+        { key = "s", action = wezterm.action_callback(function(window, pane)
+            window:perform_action("PopKeyTable", pane)
+            window:perform_action("QuickSelect", pane)
+        end) },
+        { key = "x", action = wezterm.action_callback(function(window, pane)
+            window:perform_action("PopKeyTable", pane)
+            window:perform_action("ActivateCopyMode", pane)
+        end) },
         { key = "Escape", action = "PopKeyTable" },
         { key = "Enter", action = "PopKeyTable" },
     }
@@ -117,7 +125,6 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     end
 
     return elements
-
 end)
 
 wezterm.on("update-right-status", function(window, pane)
