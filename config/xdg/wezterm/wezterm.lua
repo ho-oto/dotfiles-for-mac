@@ -64,6 +64,7 @@ local tabbar_bg = "#282a36"
 local tabbar_fg = "#f8f8f2"
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+    local SOLID_RIGHT_ARROW = utf8.char(0xe0bc)
 
     local foreground = "#f8f8f2"
 
@@ -92,28 +93,28 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
         return {
             { Background = { Color = background } },
             { Foreground = { Color = left_color } },
-            { Text = utf8.char(0xe0bc) },
+            { Text = SOLID_RIGHT_ARROW },
             { Background = { Color = background } },
             { Foreground = { Color = foreground } },
             { Text = text },
             { Background = { Color = tabbar_fg } },
             { Foreground = { Color = background } },
-            { Text = utf8.char(0xe0bc) }
+            { Text = SOLID_RIGHT_ARROW }
         }
     else
         return {
             { Background = { Color = background } },
             { Foreground = { Color = left_color } },
-            { Text = utf8.char(0xe0bc) },
+            { Text = SOLID_RIGHT_ARROW },
             { Background = { Color = background } },
             { Foreground = { Color = foreground } },
             { Text = text },
             { Background = { Color = tabbar_fg } },
             { Foreground = { Color = background } },
-            { Text = utf8.char(0xe0bc) },
+            { Text = SOLID_RIGHT_ARROW },
             { Background = { Color = tabbar_bg } },
             { Foreground = { Color = tabbar_fg } },
-            { Text = utf8.char(0xe0bc) .. " " }
+            { Text = SOLID_RIGHT_ARROW .. " " }
         }
     end
 end)
