@@ -190,6 +190,7 @@ return {
     -- tab_bar_at_bottom = true,
     color_scheme = "Dracula",
     window_background_opacity = 0.8,
+    window_decorations = "RESIZE",
     ssh_domains = ssh_domains,
     keys = keys,
     key_tables = key_tables,
