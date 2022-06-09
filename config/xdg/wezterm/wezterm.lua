@@ -72,45 +72,43 @@ local tabbar_bg = "#282a36"
 local tabbar_fg = "#f8f8f2"
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-    --[[
-        * first and last
-            text = "  1: {title}  {separator}{separator} "
-            max_width(title) = max_width - 10
-        * first and not last
-            text = "  1: {title}  {separator}"
-            max_width(title) = max_width - 8
-        * not first and not last
-            text = "{separator}  {tab_index}: {title}  {separator}"
-            max_width(title) = max_width - 8 - column_width(tab_index)
-        * not first and last
-            text = "{separator}  {tab_index}: {title}  {separator}{separator} "
-            max_width(title) = max_width - 10 - column_width(tab_index)
-    --]]
-
     local tab_index = tab.tab_index + 1
     local is_first = (tab.tab_index == 0)
     local is_last = (tab.tab_index == #tabs - 1)
 
+    -- powerline glyph (upper left triangle)
     local separator = utf8.char(0xe0bc)
 
     local tab_bg = "#44475a"
     if hover then tab_bg = "#ffb86c" end
     if tab.is_active then tab_bg = "#ff79c6" end
 
-    local max_title_length = max_width - 8 - wezterm.column_width(tab_index)
+    -- neither first nor last
+    -- text = "{separator}  {tab_index}: {title}  {separator}"
+    -- max_width(text) = max_width(title) + width(tab_index) + 8
+    local max_title_width = max_width - 8 - wezterm.column_width(tab_index)
     if is_first and is_last then
-        max_title_length = max_width - 10
+        -- first and last
+        -- text = "  1: {title}  {separator}{separator} "
+        -- max_width(text) = max_width(title) + 10
+        max_title_width = max_width - 10
     elseif is_first then
-        max_title_length = max_width - 8
+        -- first and not last
+        -- text = "  1: {title}  {separator}"
+        -- max_width(text) = max_width(title) + 8
+        max_title_width = max_width - 8
     elseif is_last then
-        max_title_length = max_width - 10 - wezterm.column_width(tab_index)
+        -- last and not first
+        -- text = "{separator}  {tab_index}: {title}  {separator}{separator} "
+        -- max_width(text) = max_width(title) + width(tab_index) + 10
+        max_title_width = max_width - 10 - wezterm.column_width(tab_index)
     end
 
     local title = tab.active_pane.title
     if title == "" then
         title = string.gsub(tab.active_pane.current_working_dir, "(.*[/\\])(.*)", "%2")
     end
-    title = wezterm.truncate_right(title, max_title_length)
+    title = wezterm.truncate_right(title, max_title_width)
 
     local text = "  " .. tab_index .. ": " .. title .. "  "
     if not is_first then text = separator .. text end
@@ -181,24 +179,25 @@ local font = wezterm.font_with_fallback({
 })
 
 return {
+    -- shell
     default_prog = { "zsh", "-lc", [[exec fish]] },
-    font = font,
-    font_size = 14,
-    scrollback_lines = 10000,
-    initial_rows = 32,
-    initial_cols = 250,
-    -- tab_bar_at_bottom = true,
-    color_scheme = "Dracula",
-    window_background_opacity = 0.8,
-    window_decorations = "RESIZE",
-    ssh_domains = ssh_domains,
+    -- key config
     keys = keys,
     key_tables = key_tables,
-    -- use_fancy_tab_bar = true,
-    -- window_frame = { inactive_tabbar_bg = tabbar_bg },
+    -- ssh domains
+    ssh_domains = ssh_domains,
+    -- appearance
+    font = font,
+    font_size = 14,
+    initial_rows = 32,
+    initial_cols = 250,
+    color_scheme = "Dracula",
+    colors = { tab_bar = { background = tabbar_bg } },
+    window_decorations = "RESIZE",
+    window_background_opacity = 0.8,
+    inactive_pane_hsb = { saturation = 0.25, brightness = 0.25 },
     use_fancy_tab_bar = false,
-    colors = {
-        tab_bar = { background = tabbar_bg },
-    },
     tab_max_width = 24,
+    -- misc
+    scrollback_lines = 10000,
 }

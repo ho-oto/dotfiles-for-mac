@@ -22,7 +22,7 @@ hotkey.bind(
                 local w = window.frontmostWindow()
                 if w:application():name() ~= "WezTerm" then return end
                 local s = screen.mainScreen():fullFrame()
-                w:setFrame(geometry.rect(s.x, s.h / 4, s.w, 3 * s.h / 4))
+                w:setFrame(geometry.rect(s.x, (2 / 5) * s.h, s.w, (3 / 5) * s.h))
             end,
             0.01)
         return
