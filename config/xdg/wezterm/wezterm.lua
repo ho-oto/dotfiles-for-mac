@@ -93,9 +93,9 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 
     local separator = utf8.char(0xe0bc)
 
-    local background = "#44475a"
-    if hover then background = "#ffb86c" end
-    if tab.is_active then background = "#ff79c6" end
+    local tab_bg = "#44475a"
+    if hover then tab_bg = "#ffb86c" end
+    if tab.is_active then tab_bg = "#ff79c6" end
 
     local max_title_length = max_width - 8 - wezterm.column_width(tab_index)
     if is_first and is_last then
@@ -116,11 +116,11 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     if not is_first then text = separator .. text end
 
     local elements = {
-        { Background = { Color = background } },
+        { Background = { Color = tab_bg } },
         { Foreground = { Color = tabbar_fg } },
         { Text = text },
         { Background = { Color = tabbar_fg } },
-        { Foreground = { Color = background } },
+        { Foreground = { Color = tab_bg } },
         { Text = separator },
     }
     if is_last then
@@ -189,7 +189,7 @@ return {
     initial_cols = 250,
     -- tab_bar_at_bottom = true,
     color_scheme = "Dracula",
-    window_background_opacity = 0.9,
+    window_background_opacity = 0.8,
     ssh_domains = ssh_domains,
     keys = keys,
     key_tables = key_tables,
