@@ -72,27 +72,39 @@ local tabbar_bg = "#282a36"
 local tabbar_fg = "#f8f8f2"
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+    --[[
+        * first and last
+            text = "  1: {title}  {separator}{separator} "
+            max_width(title) = max_width - 10
+        * first and not last
+            text = "  1: {title}  {separator}"
+            max_width(title) = max_width - 8
+        * not first and not last
+            text = "{separator}  {tab_index}: {title}  {separator}"
+            max_width(title) = max_width - 8 - column_width(tab_index)
+        * not first and last
+            text = "{separator}  {tab_index}: {title}  {separator}{separator} "
+            max_width(title) = max_width - 10 - column_width(tab_index)
+    --]]
+
     local tab_index = tab.tab_index + 1
     local is_first = (tab.tab_index == 0)
     local is_last = (tab.tab_index == #tabs - 1)
-    local SOLID_RIGHT_ARROW = utf8.char(0xe0bc)
 
-    local foreground = "#f8f8f2"
+    local separator = utf8.char(0xe0bc)
 
     local background = "#44475a"
-    if tab.is_active then
-        background = "#ff79c6"
-    elseif hover then
-        background = "#ffb86c"
-    end
+    if hover then background = "#ffb86c" end
+    if tab.is_active then background = "#ff79c6" end
 
-    local max_title_length = max_width - wezterm.column_width(tab_index .. "  :   ") - 2
-    if is_first then
-        max_title_length = max_width - wezterm.column_width(tab_index .. " :   ") - 1
+    local max_title_length = max_width - 8 - wezterm.column_width(tab_index)
+    if is_first and is_last then
+        max_title_length = max_width - 10
+    elseif is_first then
+        max_title_length = max_width - 8
     elseif is_last then
-        max_title_length = max_width - wezterm.column_width(tab_index .. "  :   ") - 4
+        max_title_length = max_width - 10 - wezterm.column_width(tab_index)
     end
-
 
     local title = tab.active_pane.title
     if title == "" then
@@ -100,28 +112,21 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     end
     title = wezterm.truncate_right(title, max_title_length)
 
-    local left_color = tabbar_fg
-    if is_first then left_color = background end
-
-    local text = " " .. tab_index .. ": " .. title .. "  "
-    if not is_first then text = " " .. text end
+    local text = "  " .. tab_index .. ": " .. title .. "  "
+    if not is_first then text = separator .. text end
 
     local elements = {
         { Background = { Color = background } },
-        { Foreground = { Color = left_color } },
-        { Text = SOLID_RIGHT_ARROW },
-        { Background = { Color = background } },
-        { Foreground = { Color = foreground } },
+        { Foreground = { Color = tabbar_fg } },
         { Text = text },
         { Background = { Color = tabbar_fg } },
         { Foreground = { Color = background } },
-        { Text = SOLID_RIGHT_ARROW }
+        { Text = separator },
     }
-
     if is_last then
         table.insert(elements, { Background = { Color = tabbar_bg } })
         table.insert(elements, { Foreground = { Color = tabbar_fg } })
-        table.insert(elements, { Text = SOLID_RIGHT_ARROW .. " " })
+        table.insert(elements, { Text = separator .. " " })
     end
 
     return elements
