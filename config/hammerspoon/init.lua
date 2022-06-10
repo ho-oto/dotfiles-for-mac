@@ -100,3 +100,12 @@ hotkey.bind({ 'ctrl', 'cmd' }, 'a', function()
     end
 end
 )
+
+hotkey.bind({ 'ctrl', 'cmd' }, 'down', function()
+    local w = window.frontmostWindow()
+    local appname = w:application():name()
+    if appname ~= "WezTerm" and appname ~= "wezterm-gui" then return end
+    local s = screen.mainScreen():fullFrame()
+    w:setFrame(geometry.rect(s.x, (2 / 5) * s.h, s.w, (3 / 5) * s.h))
+end
+)
