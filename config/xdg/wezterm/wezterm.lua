@@ -14,6 +14,8 @@ local keys = {
     { key = "q", mods = "CTRL", action = wezterm.action {
         ActivateKeyTable = { name = "Pane", one_shot = false, timeout_milliseconds = 10000 }
     } },
+    { key = "UpArrow", mods = "ALT", action = wezterm.action { ScrollByPage = -1 / 20 } },
+    { key = "DownArrow", mods = "ALT", action = wezterm.action { ScrollByPage = 1 / 20 } },
 }
 local key_tables = {
     Pane = {
