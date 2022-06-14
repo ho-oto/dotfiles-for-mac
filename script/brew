@@ -30,6 +30,7 @@ formulas=(
     git         # https://git-scm.com                         |
     git-delta   # https://github.com/dandavison/delta         | syntax-highlighting pager
     git-lfs     # https://git-lfs.github.com                  |
+    gron        # https://github.com/tomnomnom/gron           | make JSON greppable
     htop        # https://htop.dev                            | alternative of top
     hugo        # https://gohugo.io                           | static site generator
     hyperfine   # https://github.com/sharkdp/hyperfine        | benchmark tool
