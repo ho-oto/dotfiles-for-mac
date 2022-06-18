@@ -61,7 +61,7 @@ local key_tables = {
             window:perform_action("PopKeyTable", pane)
             window:perform_action("QuickSelect", pane)
         end) },
-        { key = "x", action = wezterm.action_callback(function(window, pane)
+        { key = "v", action = wezterm.action_callback(function(window, pane)
             window:perform_action("PopKeyTable", pane)
             window:perform_action("ActivateCopyMode", pane)
         end) },
