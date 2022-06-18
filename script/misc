@@ -11,4 +11,5 @@ git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"
 git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
 # broot
+[ -d /opt/homebrew ] && export PATH="/opt/homebrew/bin:$PATH"
 broot --install fish
