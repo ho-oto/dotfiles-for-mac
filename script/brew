@@ -15,6 +15,7 @@ brew tap homebrew/cask-fonts
 formulas=(
     bat         # https://github.com/sharkdp/bat              | alternative of cat
     bottom      # https://github.com/ClementTsang/bottom      | alternative of top
+    broot       # https://github.com/Canop/broot              |
     clipper     # https://github.com/wincent/clipper          | clipbpard access
     cmake       # https://cmake.org                           |
     difftastic  # https://github.com/Wilfred/difftastic       | structual diff tool
