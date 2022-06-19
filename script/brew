@@ -28,6 +28,7 @@ formulas=(
     fisher      # https://github.com/jorgebucaran/fisher      | package manager for fish
     fzf         # https://github.com/junegunn/fzf             | fuzzy finder
     gh          # https://github.com/cli/cli                  | GitHub cli
+    ghq         # https://github.com/x-motemen/ghq            | manage remote repository clones
     git         # https://git-scm.com                         |
     git-delta   # https://github.com/dandavison/delta         | syntax-highlighting pager
     git-lfs     # https://git-lfs.github.com                  |
