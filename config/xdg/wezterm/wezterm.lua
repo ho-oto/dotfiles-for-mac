@@ -12,7 +12,7 @@ end
 
 local keys = {
     { key = "q", mods = "CTRL", action = wezterm.action {
-        ActivateKeyTable = { name = "Pane", one_shot = false, timeout_milliseconds = 10000 }
+        ActivateKeyTable = { name = "Pane", one_shot = false, timeout_milliseconds = 10000, replace_current = false }
     } },
     { key = "UpArrow", mods = "ALT", action = wezterm.action { ScrollByPage = -1 / 20 } },
     { key = "DownArrow", mods = "ALT", action = wezterm.action { ScrollByPage = 1 / 20 } },
