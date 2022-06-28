@@ -1,12 +1,35 @@
-if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
-    if [[ $ITERM_PROFILE == "guake" ]]; then
-        SESSION_NAME=guake
-    else
-        SESSION_NAME=iterm
-    fi
-    if tmux has-session -t $SESSION_NAME; then
-        tmux attach -t $SESSION_NAME && exit
-    else
-        tmux new -s $SESSION_NAME && exit
-    fi
-fi
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_NO_STORE
+
+alias ls='exa --icons --group-directories-first --color=auto'
+alias ll='ls --long --header --git'
+alias la='ll --all'
+alias lt='ls --tree'
+
+alias grep='grep --color=auto'
+alias fgrep='grep -f --color=auto'
+alias egrep='grep -e --color=auto'
+alias ncdu='ncdu --color dark -rr'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias em='emacs'
+alias lg='lazygit'
+alias rm='trash'
+
+eval "$(starship init zsh)"
+eval "$(pyenv init -)"
+eval "$(zoxide init zsh)"

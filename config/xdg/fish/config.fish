@@ -1,19 +1,19 @@
 set fish_greeting
 set -x FZF_LEGACY_KEYBINDINGS 0
 
-alias ls="exa --icons --group-directories-first --color=auto"
-alias ll="ls --long --header --git"
-alias la="ll --all"
-alias lt="ls --tree"
+alias ls "exa --icons --group-directories-first --color=auto"
+alias ll "ls --long --header --git"
+alias la "ll --all"
+alias lt "ls --tree"
 
-alias grep="grep --color=auto"
-alias fgrep="fgrep --color=auto"
-alias egrep="egrep --color=auto"
-alias ncdu="ncdu --color dark -rr"
+alias grep "grep --color=auto"
+alias fgrep "grep -f --color=auto"
+alias egrep "grep -e --color=auto"
+alias ncdu "ncdu --color dark -rr"
 
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias .. "cd .."
+alias ... "cd ../.."
+alias .... "cd ../../.."
 
 abbr --add em emacs
 abbr --add lg lazygit

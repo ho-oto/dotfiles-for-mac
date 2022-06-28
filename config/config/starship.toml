@@ -4,3 +4,10 @@ fish_style_pwd_dir_length = 2
 
 [username]
 disabled = false
+
+[shell]
+disabled = false
+bash_indicator = "bash "
+fish_indicator = ""
+zsh_indicator = "zsh "
+format = "[$indicator]($style)"
