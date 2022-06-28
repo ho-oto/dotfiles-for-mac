@@ -3,8 +3,8 @@ case $- in
       *) return;;
 esac
 
-HISTSIZE=1000
-HISTFILESIZE=2000
+export HISTSIZE=1000
+export SAVEHIST=100000
 
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
