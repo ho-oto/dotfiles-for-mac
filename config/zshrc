@@ -1,7 +1,4 @@
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[[ -o interactive ]] || return
 
 export HISTSIZE=1000
 export SAVEHIST=100000
