@@ -22,12 +22,14 @@ dirsxdgc=(
     fish
     git
     wezterm
+    broot
 )
 filesxdgc=(
     fish/config.fish
     git/config
     git/ignore
     wezterm/wezterm.lua
+    broot/conf.toml
 )
 
 mkdir -p "$XDG_CONFIG_HOME"
