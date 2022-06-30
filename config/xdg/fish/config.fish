@@ -7,13 +7,13 @@ alias la "ll --all"
 alias lt "ls --tree"
 
 alias grep "grep --color=auto"
-alias fgrep "grep -f --color=auto"
-alias egrep "grep -e --color=auto"
 alias ncdu "ncdu --color dark -rr"
 
 alias .. "cd .."
 alias ... "cd ../.."
 alias .... "cd ../../.."
+
+alias rm "trash"
 
 abbr --add em emacs
 abbr --add lg lazygit
@@ -40,9 +40,6 @@ if status is-interactive
     pyenv init - | source
     zoxide init fish | source
 end
-
-# for Mac
-alias rm="trash"
 
 function brew
     set --export --local PATH $PATH

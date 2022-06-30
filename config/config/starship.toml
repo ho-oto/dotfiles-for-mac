@@ -3,7 +3,10 @@ truncation_length = 8
 fish_style_pwd_dir_length = 2
 
 [username]
-disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
 
 [shell]
 disabled = false
