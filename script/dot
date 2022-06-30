@@ -13,7 +13,6 @@ fileshome=(
     zprofile
     emacs.el
     tmux.conf
-    clipper.json
     julia/config/startup.jl
     config/starship.toml # location of starship.toml is $HOME/.config, not $XDG_CONFIG_HOME
     hammerspoon/init.lua

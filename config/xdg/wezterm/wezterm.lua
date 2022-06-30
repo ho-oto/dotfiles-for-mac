@@ -65,6 +65,7 @@ local key_tables = {
             window:perform_action("PopKeyTable", pane)
             window:perform_action("ActivateCopyMode", pane)
         end) },
+        { key = "d", action = wezterm.action.DetachDomain("CurrentPaneDomain") },
         { key = "Escape", action = "PopKeyTable" },
         { key = "Enter", action = "PopKeyTable" },
     }
