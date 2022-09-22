@@ -36,7 +36,7 @@ hotkey.bind(
     if weztermGui then -- check if wezterm-gui is active
         allWindowsGui = weztermGui:allWindows()
         table.sort(allWindowsGui, function(a, b) return a:id() < b:id() end)
-        for _, w in ipairs(allWindowsGui) do table.insert(allWindows, w) end
+        for _, w in ipairs(allWindowsGui) do table.insert(allWindows, 1, w) end
     end
 
     if weztermGui then
