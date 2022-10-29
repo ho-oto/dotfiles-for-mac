@@ -70,7 +70,7 @@ formulascask=(
     firefox
     google-chrome
     hammerspoon
-    itsycal
+    #itsycal
     latexit
     loopback
     mactex-no-gui
