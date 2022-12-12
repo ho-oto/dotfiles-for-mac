@@ -10,6 +10,7 @@ set -euxo
 [ -n "${CI:-}" ] && rm /usr/local/bin/julia # remove preinstall julia to pass CI
 
 formulas=(
+    aria2       # https://github.com/aria2/aria2              | download util
     bat         # https://github.com/sharkdp/bat              | alternative of cat
     bottom      # https://github.com/ClementTsang/bottom      | alternative of top
     broot       # https://github.com/Canop/broot              |
@@ -70,17 +71,14 @@ formulascask=(
     firefox
     google-chrome
     hammerspoon
-    # itsycal
-    latexit
+    # latexit
     loopback
-    mactex-no-gui
+    # mactex-no-gui
     microsoft-edge
-    # microsoft-office
     monitorcontrol
     pdf-expert
     slack
     spotify
-    veracrypt
     visual-studio-code
     wezterm
     xquartz
