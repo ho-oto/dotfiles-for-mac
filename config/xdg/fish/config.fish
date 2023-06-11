@@ -33,6 +33,7 @@ abbr --add gfix git commit --amend --no-edit
 if test $TERM_PROGRAM = "WezTerm"
     abbr --add wec wezterm connect
     abbr --add wes wezterm ssh
+    alias imgcat "wezterm imgcat" 
 end
 
 if status is-interactive
