@@ -8,6 +8,9 @@ show_always = true
 [hostname]
 ssh_only = false
 
+[battery]
+disabled = true
+
 [shell]
 disabled = false
 bash_indicator = "bash "

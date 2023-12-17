@@ -23,6 +23,8 @@ eval "$(pyenv init --path)"
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+eval "source $HOME/.rye/env"
+
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"

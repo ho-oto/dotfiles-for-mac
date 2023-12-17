@@ -1,7 +1,7 @@
 set fish_greeting
 set -x FZF_LEGACY_KEYBINDINGS 0
 
-alias ls "exa --icons --group-directories-first --color=auto"
+alias ls "eza --icons --group-directories-first --color=auto"
 alias ll "ls --long --header --git"
 alias la "ll --all"
 alias lt "ls --tree"
@@ -33,7 +33,7 @@ abbr --add gfix git commit --amend --no-edit
 if test $TERM_PROGRAM = "WezTerm"
     abbr --add wec wezterm connect
     abbr --add wes wezterm ssh
-    alias imgcat "wezterm imgcat" 
+    alias imgcat "wezterm imgcat"
 end
 
 if status is-interactive

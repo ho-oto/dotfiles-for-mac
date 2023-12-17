@@ -13,14 +13,13 @@ formulas=(
     aria2       # https://github.com/aria2/aria2              | download util
     bat         # https://github.com/sharkdp/bat              | alternative of cat
     bottom      # https://github.com/ClementTsang/bottom      | alternative of top
-    broot       # https://github.com/Canop/broot              |
     clipper     # https://github.com/wincent/clipper          | clipbpard access
     cmake       # https://cmake.org                           |
     difftastic  # https://github.com/Wilfred/difftastic       | structual diff tool
     direnv      # https://github.com/direnv/direnv            |
     dust        # https://github.com/bootandy/dust            | alternative of du
     emacs       # https://www.gnu.org/software/emacs          |
-    exa         # https://github.com/ogham/exa                | alternative of ls
+    eza         # https://github.com/eza-community/eza        | alternative of ls
     fd          # https://github.com/sharkdp/fd               | alternative of find
     fish        # https://fishshell.com                       | user-friendly shell
     fisher      # https://github.com/jorgebucaran/fisher      | package manager for fish
@@ -35,12 +34,10 @@ formulas=(
     hugo        # https://gohugo.io                           | static site generator
     hyperfine   # https://github.com/sharkdp/hyperfine        | benchmark tool
     jc          # https://github.com/kellyjonbrazil/jc        | convert outputs of cli to JSON
-    juliaup     # https://github.com/JuliaLang/juliaup        | julia version manager
     jq          # https://stedolan.github.io/jq               | JSON processor
     lazygit     # https://github.com/jesseduffield/lazygit    | git TUI
     macos-trash # https://github.com/sindresorhus/macos-trash | use Trash from cli
     mas         # https://github.com/mas-cli/mas              | Mac App Strore cli
-    monolith    # https://github.com/Y2Z/monolith             | save web pages
     ncdu        # https://dev.yorhel.nl/ncdu                  | alternative of du
     poppler     # https://poppler.freedesktop.org             | PDF library
     procs       # https://github.com/dalance/procs            | alternative of ps
@@ -72,7 +69,6 @@ formulascask=(
     google-chrome
     hammerspoon
     # latexit
-    loopback
     # mactex-no-gui
     microsoft-edge
     monitorcontrol
@@ -92,7 +88,6 @@ formulasfont=(
     font-hackgen
     font-hackgen-nerd
     font-jetbrains-mono
-    font-juliamono
     font-udev-gothic
     font-udev-gothic-nf
 )

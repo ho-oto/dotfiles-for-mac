@@ -2,10 +2,8 @@
 set -euxo pipefail
 
 # Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y --no-modify-path
 
 # Python
 git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"
-
-# broot
-broot --install fish
+curl -sSf https://rye-up.com/get | bash

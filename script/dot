@@ -4,7 +4,6 @@ set -euxo
 [ -z "${XDG_CONFIG_HOME:-}" ] && XDG_CONFIG_HOME="$HOME/.config"
 
 dirshome=(
-    julia/config
     config
     hammerspoon
 )
@@ -13,7 +12,6 @@ fileshome=(
     zprofile
     emacs.el
     tmux.conf
-    julia/config/startup.jl
     config/starship.toml # location of starship.toml is $HOME/.config, not $XDG_CONFIG_HOME
     hammerspoon/init.lua
 )
@@ -22,14 +20,12 @@ dirsxdgc=(
     fish
     git
     wezterm
-    broot
 )
 filesxdgc=(
     fish/config.fish
     git/config
     git/ignore
     wezterm/wezterm.lua
-    broot/conf.toml
 )
 
 mkdir -p "$XDG_CONFIG_HOME"
