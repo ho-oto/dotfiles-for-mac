@@ -33,7 +33,6 @@ formulas=(
     htop        # https://htop.dev                            | alternative of top
     hugo        # https://gohugo.io                           | static site generator
     hyperfine   # https://github.com/sharkdp/hyperfine        | benchmark tool
-    jc          # https://github.com/kellyjonbrazil/jc        | convert outputs of cli to JSON
     jq          # https://stedolan.github.io/jq               | JSON processor
     lazygit     # https://github.com/jesseduffield/lazygit    | git TUI
     macos-trash # https://github.com/sindresorhus/macos-trash | use Trash from cli
