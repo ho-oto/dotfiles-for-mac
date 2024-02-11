@@ -4,6 +4,5 @@ set -euxo pipefail
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y --no-modify-path
 
-# Python
-git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"
-curl -sSf https://rye-up.com/get | bash
+# Rye (Python)
+curl -sSf https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash

@@ -2,7 +2,6 @@
 set -euxo
 
 appids=(
-    360593530  # Notability
     409183694  # Keynote
     494168017  # Authy (iPad)
     497799835  # Xcode
@@ -12,6 +11,7 @@ appids=(
     1295203466 # Microsoft Remote Desktop
     1355679052 # Dropover
     1475387142 # Tailscale
+    1478757472 # Bluebird
 )
 
 for appid in "${appids[@]}"; do

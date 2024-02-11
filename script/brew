@@ -7,8 +7,6 @@ set -euxo
 [ -d /opt/homebrew ] && export PATH="/opt/homebrew/bin:$PATH"
 [ "$(uname -m)" = "arm64" ] && sudo softwareupdate --install-rosetta
 
-[ -n "${CI:-}" ] && rm /usr/local/bin/julia # remove preinstall julia to pass CI
-
 formulas=(
     aria2       # https://github.com/aria2/aria2              | download util
     bat         # https://github.com/sharkdp/bat              | alternative of cat
