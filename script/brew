@@ -65,8 +65,6 @@ formulascask=(
     firefox
     google-chrome
     hammerspoon
-    # latexit
-    # mactex-no-gui
     microsoft-edge
     monitorcontrol
     pdf-expert

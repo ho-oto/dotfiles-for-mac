@@ -9,9 +9,7 @@ cd "$DOTFILES_ROOT/script"
 
 ./brew
 [ -d /opt/homebrew ] && eval "$(/opt/homebrew/bin/brew shellenv)" || eval "$(brew shellenv)"
-
 ./fisher
 ./misc
 [ -z "${CI:-}" ] && ./mas
-
 ./dot

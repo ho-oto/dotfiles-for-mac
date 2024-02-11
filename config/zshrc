@@ -26,5 +26,4 @@ alias lg='lazygit'
 alias rm='trash'
 
 eval "$(starship init zsh)"
-eval "$(pyenv init -)"
 eval "$(zoxide init zsh)"
