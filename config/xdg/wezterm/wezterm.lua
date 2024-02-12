@@ -84,8 +84,15 @@ local key_tables = {
             end)
         },
         -- move tab
-        { key = "Tab", action = wezterm.action { ActivateTabRelative = 1 } },
-        { key = "Tab", mods = "SHIFT",                                     action = wezterm.action { ActivateTabRelative = -1 } },
+        {
+            key = "Tab",
+            action = wezterm.action { ActivateTabRelative = 1 }
+        },
+        {
+            key = "Tab",
+            mods = "SHIFT",
+            action = wezterm.action { ActivateTabRelative = -1 }
+        },
         -- misc
         {
             key = "r",
@@ -178,7 +185,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     return elements
 end)
 
-wezterm.on("update-right-status", function(window, pane)
+wezterm.on("update-status", function(window, pane)
     local SOLID_LEFT_ARROW = utf8.char(0xe0b6)
 
     local color_mode = ""
@@ -205,14 +212,8 @@ wezterm.on("update-right-status", function(window, pane)
 
     local cwd_uri = pane:get_current_working_dir()
     if cwd_uri then
-        cwd_uri = cwd_uri:sub(8);
-        local slash = cwd_uri:find("/")
-        local hostname = ""
-        if slash then
-            hostname = cwd_uri:sub(1, slash - 1)
-            local dot = hostname:find("[.]")
-            if dot then hostname = hostname:sub(1, dot - 1) end
-            insert_element(hostname)
+        if cwd_uri.host then
+            insert_element(cwd_uri.host)
         end
     end
 

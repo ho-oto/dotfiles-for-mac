@@ -9,7 +9,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt HIST_NO_STORE
 
-alias ls='exa --icons --group-directories-first --color=auto'
+alias ls='eza --icons --group-directories-first --color=auto'
 alias ll='ls --long --header --git'
 alias la='ll --all'
 alias lt='ls --tree'
