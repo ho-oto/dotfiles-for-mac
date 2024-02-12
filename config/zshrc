@@ -27,3 +27,4 @@ alias rm='trash'
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(mise activate zsh)"

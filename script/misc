@@ -6,3 +6,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y --no-m
 
 # Rye (Python)
 curl -sSf https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
+
+# mise
+curl https://mise.run | bash

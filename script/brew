@@ -12,9 +12,7 @@ formulas=(
     bat         # https://github.com/sharkdp/bat              | alternative of cat
     bottom      # https://github.com/ClementTsang/bottom      | alternative of top
     clipper     # https://github.com/wincent/clipper          | clipbpard access
-    cmake       # https://cmake.org                           |
     difftastic  # https://github.com/Wilfred/difftastic       | structual diff tool
-    direnv      # https://github.com/direnv/direnv            |
     dust        # https://github.com/bootandy/dust            | alternative of du
     emacs       # https://www.gnu.org/software/emacs          |
     eza         # https://github.com/eza-community/eza        | alternative of ls
@@ -23,7 +21,6 @@ formulas=(
     fisher      # https://github.com/jorgebucaran/fisher      | package manager for fish
     fzf         # https://github.com/junegunn/fzf             | fuzzy finder
     gh          # https://github.com/cli/cli                  | GitHub cli
-    ghq         # https://github.com/x-motemen/ghq            | manage remote repository clones
     git         # https://git-scm.com                         |
     git-delta   # https://github.com/dandavison/delta         | syntax-highlighting pager
     git-lfs     # https://git-lfs.github.com                  |
