@@ -5,7 +5,7 @@ set -euxo
 
 # On ARM macOS, brew will be installed to /opt/homebrew
 [ -d /opt/homebrew ] && export PATH="/opt/homebrew/bin:$PATH"
-[ "$(uname -m)" = "arm64" ] && sudo softwareupdate --install-rosetta
+#[ "$(uname -m)" = "arm64" ] && sudo softwareupdate --install-rosetta
 
 formulas=(
     aria2       # https://github.com/aria2/aria2              | download util
