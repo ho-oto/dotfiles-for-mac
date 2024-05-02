@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 set -euxo
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-# On ARM macOS, brew will be installed to /opt/homebrew
-[ -d /opt/homebrew ] && export PATH="/opt/homebrew/bin:$PATH"
-#[ "$(uname -m)" = "arm64" ] && sudo softwareupdate --install-rosetta
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+export PATH="/opt/homebrew/bin:$PATH"
 
 formulas=(
     aria2       # https://github.com/aria2/aria2              | download util

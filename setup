@@ -8,7 +8,7 @@ git clone -b "${GITHUB_REF_NAME:-"master"}" https://github.com/ho-oto/dotfiles-f
 cd "$DOTFILES_ROOT/script"
 
 ./brew
-[ -d /opt/homebrew ] && eval "$(/opt/homebrew/bin/brew shellenv)" || eval "$(brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 ./fisher
 ./misc
 [ -z "${CI:-}" ] && ./mas
