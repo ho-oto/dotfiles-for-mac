@@ -12,6 +12,7 @@ alias ncdu "ncdu --color dark -rr"
 alias .. "cd .."
 alias ... "cd ../.."
 alias .... "cd ../../.."
+alias ..... "cd ../../../.."
 
 alias rm "trash"
 
