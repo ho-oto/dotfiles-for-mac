@@ -68,15 +68,15 @@ formulascask=(
     wezterm
     xquartz
     zoom
-)
-
-formulasfont=(
     font-cascadia-code
     font-cica
     font-fira-code
     font-hackgen
     font-hackgen-nerd
     font-jetbrains-mono
+    font-juliamono
+    font-juisee
+    font-juisee-nf
     font-udev-gothic
     font-udev-gothic-nf
 )
@@ -90,14 +90,6 @@ for formula in "${formulas[@]}"; do
 done
 
 for formula in "${formulascask[@]}"; do
-    if ! brew list --cask --versions "$formula"; then
-        brew install --cask "$formula"
-    fi
-done
-
-brew tap homebrew/cask-fonts
-
-for formula in "${formulasfont[@]}"; do
     if ! brew list --cask --versions "$formula"; then
         brew install --cask "$formula"
     fi
